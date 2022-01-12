@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OnClick-Event</title>
+    <style>
+      .box {
+        display: inline-block;
+        height: 200px;
+        width: 200px;
+        border: 2px solid black;
+        text-align: center;
+        line-height: 170px;
+        text-transform: capitalize;
+        font-weight: bold;
+        font-family: cursive;
+        margin-top: 170px;
+        margin-left: 80px;
+      }
+      h1 {
+        text-transform: capitalize;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Mr. Ahmad</h1>
+    <script>
+      function hello() {
+        document.write("Hello Mr. Ahmad");
+      }
+      function normal(tag) {
+        tag.style.backgroundColor = "transparent";
+      }
+      function changeColor(color, tag) {
+        tag.style.backgroundColor = color;
+      }
+    </script>
+    <button onmo="hello()">Click Me</button>
+
+    <div
+      onmouseout="normal(this)"
+      class="box"
+      onclick="changeColor ('red', this)"
+    >
+      red
+    </div>
+    <div
+      onmouseout="normal(this)"
+      class="box"
+      onclick="changeColor ('blue', this)"
+    >
+      blue
+    </div>
+    <div
+      onmouseout="normal(this)"
+      class="box"
+      onclick="changeColor('green', this)"
+    >
+      green
+    </div>
+    <div
+      onmouseout="normal(this)"
+      class="box"
+      onclick="changeColor('black', this)"
+    >
+      black
+    </div>
+  </body>
+</html>

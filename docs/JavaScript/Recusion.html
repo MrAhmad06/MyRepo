@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recursion-Function</title>
+  </head>
+  <body>
+    <script>
+      //   let x = getfactorial(5);
+      //   function getfactorial(num) {
+      //     if (num == 1) {
+      //       return num;
+      //     } else {
+      //       return getfactorial(num - 1) * num;
+      //     }
+      //   }
+      //   document.write(x);
+      //   -------------------------------
+      //   let x = odd_even(1);
+      //   function odd_even(num) {
+      //     if (num == 0) {
+      //       return "num is even";
+      //     } else if (num == 1) {
+      //       return "num is odd";
+      //     }
+      //   }
+      //   document.write(x);
+      let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      let i = 0;
+
+      function oddDlt() {
+        if (i == arr.length - 1) {
+          return;
+        } else if (arr[i] % 2 == 0) {
+          i++;
+          oddDlt();
+        } else {
+          arr.splice(i, 1);
+          oddDlt();
+        }
+      }
+      oddDlt(arr);
+      document.write(arr);
+    </script>
+  </body>
+</html>

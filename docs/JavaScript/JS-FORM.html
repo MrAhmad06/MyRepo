@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-FORM</title>
+  </head>
+  <body>
+    <form id="myForm">
+      <div>
+        <input id="userName" type="text" />
+      </div>
+
+      <div>
+        <input id="password" type="text" />
+      </div>
+
+      <div>
+        <input id="userEmail" type="text" />
+      </div>
+
+      <button onclick="saveUser(event)">Save user</button>
+    </form>
+    <table id="myTable" border="1"></table>
+    <script>
+      let users = [];
+      // function ki small brackets k andar parametar kuch bhi ho sakta hai
+      function saveUser(evt) {
+        evt.preventDefault();
+
+        let user = {
+          name: userName.value,
+          password: password.value,
+          email: userEmail.value,
+        };
+        users.push(user);
+        myForm.reset();
+      }
+      function showUsers() {
+        myTable.innerHTML = "";
+        for (let users of user) {
+          myTable.innerHTML +=
+            "<tr> <td>" +
+            user.name +
+            "</td><td>" +
+            user.password +
+            "</td><td>" +
+            user.email +
+            "</td></tr>";
+        }
+      }
+    </script>
+  </body>
+</html>

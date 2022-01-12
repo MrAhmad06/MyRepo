@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drop-Down-menu</title>
+  </head>
+  <body>
+    <select name="" id="provinceSelector">
+      <option value="Province">Province</option>
+      <option value="Punjab">Punjab</option>
+      <option value="KPK">KPK</option>
+    </select>
+    <div id="content"></div>
+    <button onclick="showcity()">show city</button>
+    <script>
+      let cities = [
+        "Faisalabad",
+        "Lahore",
+        "Karachi",
+        "Multan",
+        "Jhang",
+        "Okara",
+        "Kohat",
+        "Dhaka",
+      ];
+      function showcity() {
+        let x = provinceSelector.value;
+        if (x == "Punjab") {
+          let y = cities.slice(0, 4);
+          y.forEach((city) => {
+            content.innerHTML = "";
+          });
+        }
+      }
+    </script>
+  </body>
+</html>

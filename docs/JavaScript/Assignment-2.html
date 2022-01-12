@@ -1,0 +1,40 @@
+let cities = ['Faisalabad', "Gojra", 'Lahore', 'Multan', 'Peshawar', "Swat" , 'Kohat', 'DI-Khan'];
+
+    function deleteKaro(evt){
+
+        if(evt.ctrlKey == true){
+            evt.target.remove();
+        }
+
+        
+        // alert(20)
+
+    }
+
+    function showCities(){
+
+        someTag.innerHTML = '';
+
+        if(provinceSelector.value == "Punjab"){
+
+            let targetCities = cities.slice(0,4);
+
+            targetCities.forEach((targetCity)=>{
+
+                someTag.innerHTML += '<div onclick="deleteKaro(event)" class="box">'+targetCity+'</div>'
+
+            });
+
+        } else if(provinceSelector.value == "KPK"){
+
+            let targetCities = cities.slice(4);
+
+            targetCities.forEach((targetCity)=>{
+
+                someTag.innerHTML += '<div  onclick="deleteKaro(event)" class="box">'+targetCity+'</div>'
+
+            });
+
+        }
+
+    }

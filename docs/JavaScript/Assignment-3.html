@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object-Form</title>
+    <style>
+      #loginForm {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+      }
+      #content {
+        justify-content: center;
+        display: flex;
+        padding: 10px;
+        border: none;
+      }
+      #parent {
+        text-align: center;
+      }
+      table {
+        display: inline-block;
+      }
+      h1 {
+        text-align: center;
+      }
+      .padding {
+        padding: 15px;
+      }
+      h3 {
+        text-align: center;
+      }
+      #button {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JavaScript Login-Form</h1>
+    <form id="loginForm">
+      <div>
+        <input type="text" name="" id="userName" placeholder="Enter name" />
+      </div>
+      <div>
+        <input
+          type="password"
+          name=""
+          id="password"
+          placeholder="Enter password"
+        />
+      </div>
+      <div>
+        <input type="text" name="" id="email" placeholder="Enter email" />
+      </div>
+    </form>
+    <div id="button">
+      <button onclick="login(event)">Login</button>
+    </div>
+    <br />
+    <h3>Record Of Data Enter</h3>
+    <div id="parent">
+      <table id="content" border="2px solid black" style="align-items: center">
+        <tr>
+          <td class="padding">Name</td>
+          <td class="padding">Password</td>
+          <td class="padding">E-mail</td>
+        </tr>
+        <tr>
+          <td id="na"></td>
+          <td id="pa"></td>
+          <td id="em"></td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      let users = [];
+      function login(event) {
+        event.preventDefault();
+
+        let user = {
+          name: userName.value,
+          pass: password.value,
+          email: email.value,
+        };
+        users.push(user);
+        na.innerHTML += user.name + "<br>";
+        pa.innerHTML += user.pass + "<br>";
+        em.innerHTML += user.email + "<br>";
+        loginForm.reset();
+      }
+    </script>
+  </body>
+</html>

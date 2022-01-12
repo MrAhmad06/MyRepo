@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-Objects</title>
+    jS Object is used to organized the data
+    Most Used Data Type of JS is Object
+  </head>
+  <body>
+    <script>
+        let Ahmad = {
+          First_name: "Muhammad",
+          Last_name: "Ahmad",
+          Cnic_no: 123456789,
+          Department: "Computer Science",
+          Subjects: [
+            "Compiler",
+            "Web Technology",
+            "OOP",
+            "Probility",
+            "Networking",
+            "Artificial Intelligence",
+          ],
+          University: "NFC",
+          Session: 2018,
+          Address: {
+            Permanent_address:
+              "Street#14, Mohala Sohail-Abad, Tufail Shaheed Road, Saleemi chowk, Faisabad",
+            Phone_no: {
+              Jazz: 923041106220,
+              Zong: "923142345670",
+              U_phone: "923245670123",
+            },
+          },
+          Designation: function () {
+            console.log(Ahmad.Address.Phone_no.Zong);
+          },
+        };
+        let x = Ahmad.Designation();
+        console.log(x);
+    </script>
+  </body>
+</html>
+

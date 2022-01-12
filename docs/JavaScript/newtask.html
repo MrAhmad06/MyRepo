@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" id="my">
+      <input id="na" type="text" /><br />
+      <input id="pa" type="text" /><br />
+      <input id="em" type="text" /><br />
+      <button onclick="saveUser(event)">save user</button>
+    </form>
+    <script>
+      let all = [];
+      function saveUser(evt) {
+        evt.preventDefault();
+        // all.forEach((el) => {
+        //   if (el.email == em.value) {
+        //     return alert("its a alraedy taken email : ");
+        //     saveUser();
+        //   }
+        // });
+
+        let data = {
+          name: na.value,
+          password: pa.value,
+          email: em.value,
+        };
+
+        my.reset();
+
+        all.push(data);
+      }
+      console.log(all);
+    </script>
+  </body>
+</html>

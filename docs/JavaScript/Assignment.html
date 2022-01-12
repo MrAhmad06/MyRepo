@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-Assignment</title>
+    <style>
+      #display {
+        color: crimson;
+        font-family: monospace;
+        font-style: italic;
+        font-size: 50px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="display"></h1>
+    <script>
+      let array = [
+        "A",
+        "Apple",
+        "B",
+        "Ball",
+        "C",
+        "Cat",
+        "D",
+        "Dog",
+        "E",
+        "Eligant",
+        "F",
+        "Fusion",
+        "G",
+        "Gold",
+        "H",
+        "Higher",
+        "I",
+        "Icon",
+        "J",
+        "Juice",
+        "K",
+        "Kite",
+        "L",
+        "Lemon",
+        "M",
+        "Mouse",
+        "N",
+        "Natural",
+        "O",
+        "Olive",
+        "P",
+        "Past",
+        "Q",
+        "Quit",
+        "R",
+        "Race",
+        "S",
+        "Star",
+        "T",
+        "Terminate",
+        "U",
+        "Univerisity",
+        "V",
+        "Voilet",
+        "W",
+        "War",
+        "X",
+        "X-Ray",
+        "Y",
+        "Yellow",
+        "Z",
+        "Zero",
+      ];
+      let x = 0;
+      setInterval(function () {
+        display.innerText = array[x];
+        x++;
+        if (x == 52) {
+          x = 0;
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>

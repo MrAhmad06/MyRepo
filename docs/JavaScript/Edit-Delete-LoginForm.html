@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit-Delete-LoginForm</title>
+  </head>
+
+  <body>
+    <form action="" id="meraform">
+      <input type="text" name="" id="naam" />
+      <input type="text" name="" id="password" />
+      <input type="text" name="" id="email" />
+      <button onclick="savedata(event)">submit</button>
+    </form>
+    <table id="content" border="1"></table>
+
+    <script>
+      let mode = "CREATE";
+      let currentIndex;
+      let users = [];
+
+      function deluser(myIndex) {
+        users.splice(myIndex, 1);
+        showusers(users);
+      }
+      function edituser(myIndex) {
+        naam.value = users[myIndex].username;
+
+        password.value = users[myIndex].pass;
+        email.value = users[myIndex].ema;
+        currentIndex = myIndex;
+        mode = "EDIT";
+      }
+
+      function showusers(abc) {
+        content.innerHTML = "";
+
+        //forEach capital
+        abc.forEach(function (user, myIndex) {
+          content.innerHTML +=
+            "<tr id='co'><td>" +
+            user.username +
+            "</td><td>" +
+            user.pass +
+            "</td><td>" +
+            user.ema +
+            '</td><td><button id="co0" onclick="edituser(' +
+            myIndex +
+            ')">EDIT</button></td> <td><button id="co1" onclick="deluser(' +
+            myIndex +
+            ')">DELETE</button> </td><td><button id="co2" onclick="colo( )" ondblclick="col()">color</button> </td></tr>';
+        });
+      }
+
+      function savedata(ccc) {
+        ccc.preventDefault();
+
+        if (naam.value == "" || password.value == "" || email.value == "") {
+          return;
+        }
+
+        if (mode == "CREATE") {
+          let obj = {
+            username: naam.value,
+            pass: password.value,
+            ema: email.value,
+          };
+
+          users.push(obj);
+        } else if (mode == "EDIT") {
+          users[currentIndex] = {
+            username: naam.value,
+            pass: password.value,
+            ema: email.value,
+          };
+          mode = "CREATE";
+        }
+        meraform.reset();
+        showusers(users);
+      }
+
+      function colo() {
+        document.getElementById("co").style.background = "aqua";
+        document.getElementById("co0").style.background = "silver";
+        document.getElementById("co1").style.background = "yellow";
+        document.getElementById("co2").style.background = "blue";
+      }
+      function col() {
+        document.getElementById("co").style.background = "yellow";
+        document.getElementById("co0").style.background = "aqua";
+        document.getElementById("co1").style.background = "lightblue";
+        document.getElementById("co2").style.background = "grey";
+      }
+    </script>
+  </body>
+</html>
